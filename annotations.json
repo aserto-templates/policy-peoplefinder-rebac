@@ -1,0 +1,9 @@
+{
+    "$manifest": {
+        "org.opencontainers.image.vendor": "Aserto",
+        "org.opencontainers.image.authors": "Aserto",
+        "org.opencontainers.image.description": "PeopleFinder ReBAC policy template.",
+        "org.opencontainers.image.source": "https://github.com/aserto-templates/policy-peoplefinder-rebac",
+        "org.openpolicyregistry.template.kind": "policy"
+    }
+}
