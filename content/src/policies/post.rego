@@ -7,9 +7,7 @@ default visible = false
 default enabled = false
 
 allowed {
-	allowedRoles := {"admin"}
-  	some x in allowedRoles
-	directory.is_in_group(input.user.key, x)
+	directory.is_in_group(input.user.key, "admin")
 }
 
 visible {

@@ -1,5 +1,6 @@
 package peoplefinder.DELETE.api.users.__id
 
+import future.keywords.in
 import data.peoplefinder.directory
 
 default allowed = false
