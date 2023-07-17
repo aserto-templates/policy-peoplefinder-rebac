@@ -4,7 +4,7 @@ package peoplefinder.PUT.api.users.__id
 #
 # The user is Allowed if:
 # - User is an admin
-# - The logged-in user is the same as the employee being updated
+# - OR The logged-in user is the same as the employee being updated
 #
 # The "Edit" button is Visible if:
 # - True

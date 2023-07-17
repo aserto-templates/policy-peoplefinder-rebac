@@ -4,7 +4,7 @@ package peoplefinder.POST.api.users.__id
 #
 # The user is Allowed if:
 # - User is an admin
-# - User is the manager or in the management chain of the employee
+# - OR User is the manager or in the management chain of the employee
 #
 # The "Update" button is always Visible
 #
