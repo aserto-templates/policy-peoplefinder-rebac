@@ -14,22 +14,22 @@ package peoplefinder.DELETE.api.users.__id
 import future.keywords.in
 import data.peoplefinder.directory
 
-default allowed = false
-default visible = false
-default enabled = false
+default allowed := false
+default visible := false
+default enabled := false
 
 # Check the Aserto Directory to see if the user is an "admin"
-allowed {
+allowed if {
 	directory.is_in_role(input.user, "admin")
 }
 
 # Check the Aserto Directory to see if the user is an "editor" or "admin"
-visible {
+visible if {
 	allowedRoles := {"editor", "admin"}
   	some x in allowedRoles
 	directory.is_in_role(input.user, x)}
 
 # Enabled is set to the result of the Allowed decision
-enabled {
+enabled if {
 	allowed
 }

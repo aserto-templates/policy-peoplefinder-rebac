@@ -8,6 +8,6 @@ package peoplefinder.GET.api.users.__id
 #
 # Getting the user is always Enabled 
 
-default allowed = true
-default visible = true
-default enabled = true
+default allowed := true
+default visible := true
+default enabled := true
