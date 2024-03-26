@@ -11,6 +11,6 @@ package peoplefinder.GET.api.users
 # The list of employees is always Enabled
 # - True
 
-default allowed = true
-default visible = true
-default enabled = true
+default allowed := true
+default visible := true
+default enabled := true

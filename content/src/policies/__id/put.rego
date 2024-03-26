@@ -14,17 +14,17 @@ package peoplefinder.PUT.api.users.__id
 
 import data.peoplefinder.directory
 
-default allowed = false
-default visible = true
-default enabled = true
+default allowed := false
+default visible := true
+default enabled := true
 
 # Check the Aserto Directory to see if the user is an "admin"
-allowed {
+allowed if {
 	directory.is_in_role(input.user, "admin")
 }
 
 # Check if the logged-in user is the same as the employee being updated
-allowed {
+allowed if {
 	input.user.key == input.resource.id
 }
 

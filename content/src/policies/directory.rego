@@ -6,7 +6,7 @@ package peoplefinder.directory
 # is_in_role() - Checks if the user has the supplied role 
 
 # Uses the Aserto Directory to determine if the user is the manager or up the management chain of the employee
-is_manager_of(user_id, employee_id) {
+is_manager_of(user_id, employee_id) if {
 	ds.check_relation({
 		"subject": {
 			"type": "user",
@@ -24,6 +24,6 @@ is_manager_of(user_id, employee_id) {
 }
 
 # Checks if the role is present in the user properties provided by Aserto
-is_in_role(user,role) {
+is_in_role(user,role) if {
     role = user.properties.roles[_]
 }
