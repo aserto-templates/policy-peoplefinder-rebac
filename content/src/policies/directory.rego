@@ -3,23 +3,16 @@ package peoplefinder.directory
 # Functions for ReBAC
 #
 # is_manager_of() - Uses the directory to check if the user is the manager of the employee
-# is_in_role() - Checks if the user has the supplied role 
+# is_in_role() - Checks if the user has the supplied role
 
 # Uses the Aserto Directory to determine if the user is the manager or up the management chain of the employee
 is_manager_of(user_id, employee_id) {
-	ds.check_relation({
-		"subject": {
-			"type": "user",
-			"key": employee_id
-		},
-		"relation": {
-			"object_type": "user",
-			"name": "manager"
-		},
-		"object": {
-			"type": "user",
-			"key": user_id
-		}
+	ds.check({
+		"object_type": "user",
+		"object_id": employee_id,
+		"relation": "manager",
+		"subject_type": "user",
+		"subject_id": user_id
 	})
 }
 
