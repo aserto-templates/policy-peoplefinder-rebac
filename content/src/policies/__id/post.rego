@@ -24,7 +24,7 @@ allowed {
 
 # Check the Aserto Directory to see if the user is a manager or in the management chain
 allowed {
-	directory.is_manager_of(input.user.key, input.resource.id)
+	directory.is_manager_of(input.user.id, input.resource.id)
 }
 
 # Enabled is set to the result of the Allowed decision
