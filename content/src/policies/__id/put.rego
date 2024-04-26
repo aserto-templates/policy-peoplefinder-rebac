@@ -25,6 +25,6 @@ allowed {
 
 # Check if the logged-in user is the same as the employee being updated
 allowed {
-	input.user.key == input.resource.id
+	input.user.id == input.resource.id
 }
 
