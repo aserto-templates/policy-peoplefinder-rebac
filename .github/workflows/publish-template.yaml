@@ -65,7 +65,7 @@ jobs:
         REPO:   ${{ steps.template-config.outputs.repo }}
         SERVER: ${{ steps.template-config.outputs.server }}
       run: |
-        oras push "${SERVER}/${REPO}:${{ join(steps.meta.outputs.tags, ',') }}" \
+        oras push "${SERVER}/${REPO}:$(echo '${{ toJSON(steps.meta.outputs.tags) }}' | jq -r '[.[] | split(":")[1]] | join(",")')" \
           --annotation-file ./annotations.json \
           --config ./config.json \
           --artifact-type application/vnd.oci.image.layer.v1.tar+gzip ./bundle.tar.gz
