@@ -18,16 +18,16 @@ default visible = false
 default enabled = false
 
 # Check the Aserto Directory to see if the user is an "admin"
-allowed {
+allowed if {
 	directory.is_in_role(input.user, "admin")
 }
 
 # Visible if the policy is allowed
-visible {
+visible if {
 	allowed
 }
 
 # Enabled if the policy is allowed
-enabled {
+enabled if {
 	allowed
 }
