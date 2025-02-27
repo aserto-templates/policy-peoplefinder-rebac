@@ -19,12 +19,12 @@ default visible = true
 default enabled = true
 
 # Check the Aserto Directory to see if the user is an "admin"
-allowed {
+allowed if {
 	directory.is_in_role(input.user, "admin")
 }
 
 # Check if the logged-in user is the same as the employee being updated
-allowed {
+allowed if {
 	input.user.id == input.resource.id
 }
 
